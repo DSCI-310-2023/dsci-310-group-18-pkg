@@ -1,0 +1,92 @@
+---
+title: "dsci-310-group-18-pkg-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dsci-310-group-18-pkg-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+This is the documentation of how to use the dsci18pkg package for useful functions that you may need for your data analysis on heart data.
+
+# Package Functions:
+
+- [`grid_boxplot()`](#grid_boxplot())
+- [`majority_classifier_vis_function()`](#majority_classifier_vis_function())
+- [`knn_visualization()`](#knn_visualizations)
+
+## Usage:
+
+\*All examples were generated using this
+[data](https://raw.githubusercontent.com/Dokkaebi10/dsci-310-group-18/main/data/processed/heart_data.csv).
+
+In order to use any of the functions the library must be called:
+
+```{r setup}
+devtools::install_github("leuneri/dsci-310-group-18-pkg")
+library(group18package)
+```
+
+### grid_boxplot()
+
+The function `grid_boxplot()` takes in a R data frame with factor
+`diagnosis_f` & a specified numeric type variable. `grid_boxplot()` then
+produces a boxplot that shows the range of the numeric variable each
+level of heart severity lies in.
+
+In this example we are using
+[heart_data](https://raw.githubusercontent.com/Dokkaebi10/dsci-310-group-18/main/data/processed/heart_data.csv),
+the factor variable is `diagnosis_f`, the numeric variable is `age`.
+
+``` {r grid_boxplot}
+boxplot <- grid_boxplot(training_split_new, age, "Age (Years)", "Severity of heart disease \n compared to age of patient")
+boxplot
+```
+
+Notice how `grid_boxplot` displays differences of the factor variable
+over the numeric variable. This type of visualization can be very
+helpful for early data visualization and question development!
+
+### majority_classifier_vis_function()
+
+`majority_classifier_vis_function()` produces a graph that displays the
+percent of rows belonging to each category in a factor variable of
+interest.
+
+This function produces a bar plot that has the degree of heart disease
+severity on the x-axis and the percent of rows in the data on the
+y-axis.
+
+This function is a convenient shortcut when determining if there is a
+categorical imbalance in the data you are using to build your model.
+
+``` {r majority_classifier_vis_function}
+maj_vis <- majority_classifier_vis_function(data = majority_classifier)
+maj_vis
+```
+
+### knn_visualization()
+
+`knn_visualization()` produces a visualization of the number of
+neighbors against accuracy estimate. This type of visualization is very
+useful when trying to determine the number of neighbors to use in a kNN
+model.
+
+`knn_visualization` generates a visualization that provides more context
+to the accuracy values than simply looking at the numbers. It ensures
+the choice for the number of neighbors is informed in a simple and
+easily executable way.
+
+The function `knn_visualization()`
+
+``` {r knn_visualization}
+knn_visualization(heart_data_accuracies)
+```
