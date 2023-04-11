@@ -3,6 +3,7 @@
 
 # dsci310.visualizations.pkg
 
+
 <!-- badges: start -->
 
 \[![codecov](https://github.com/leuneri/dsci-310-group-18-pkg/actions/workflows/test-coverage.yaml/badge.svg)
@@ -33,7 +34,7 @@ from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Dokkaebi10/dsci-310-group-18-pkg")
+devtools::install_github("leuneri/dsci-310-group-18-pkg")
 ```
 
 # Package Functions:
@@ -50,7 +51,9 @@ devtools::install_github("Dokkaebi10/dsci-310-group-18-pkg")
 In order to use any of the functions the library must be called:
 
 ``` r
-library(dsci310.visualizations.pkg)
+
+library(group18package)
+
 ```
 
 ### grid_boxplot()
@@ -65,13 +68,15 @@ In this example we are using
 the factor variable is `diagnosis_f`, the numeric variable is `age`.
 
 ``` r
-#boxplot <- grid_boxplot(data = training_split_new, xAxis = diagnosis_f, yAxis = age, yLabel = "Age (Years)", titleLabel = "Severity of heart disease \n compared to age of patient")
+boxplot <- grid_boxplot(data = training_split_new, xAxis = as.factor(training_split_new$diagnosis_f), yAxis = age, yLabel = "Age (Years)", titleLabel = "Severity of heart disease \n compared to age of patient")
 boxplot
 #> function (x, ...) 
 #> UseMethod("boxplot")
 #> <bytecode: 0x7f7c8f1f6918>
 #> <environment: namespace:graphics>
 ```
+
+<img src="man/figures/README-grid_boxplot-1.png" width="100%" />
 
 Notice how `grid_boxplot` displays differences of the factor variable
 over the numeric variable. This type of visualization can be very
@@ -91,16 +96,18 @@ This function is a convenient shortcut when determining if there is a
 categorical imbalance in the data you are using to build your model.
 
 ``` r
-# maj_vis <- majority_classifier_vis_function(data = majority_classifier, 
-                                 # hGraph = 5, 
-                                 # wGraph = 7, 
-                                 # textSize = 12, 
-                                 # colWidth = 0.5, 
-                                 # xLabel = "Heart disease degree of severity", 
-                                 # yLabel = "Percent of outcomes \n in training dataset", 
-                                 # titleLabel = "Label proportions of \n classifier in dataset")
-# maj_vis
+maj_vis <- majority_classifier_vis_function(data = majority_classifier, 
+                                 hGraph = 5, 
+                                 wGraph = 7, 
+                                 textSize = 12, 
+                                 colWidth = 0.5, 
+                                 xLabel = "Heart disease degree of severity", 
+                                 yLabel = "Percent of outcomes \n in training dataset", 
+                                 titleLabel = "Label proportions of \n classifier in dataset")
+maj_vis
 ```
+
+<img src="man/figures/README-majority_classifier_vis_function-1.png" width="100%" />
 
 ### knn_visualization()
 
@@ -117,5 +124,7 @@ easily executable way.
 The function `knn_visualization()`
 
 ``` r
-# knn_visualization(data = heart_data_accuracies)
+knn_visualization(data = heart_data_accuracies)
 ```
+
+<img src="man/figures/README-knn_visualization-1.png" width="100%" />

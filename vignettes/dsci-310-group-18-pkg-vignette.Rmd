@@ -31,7 +31,6 @@ This is the documentation of how to use the dsci18pkg package for useful functio
 In order to use any of the functions the library must be called:
 
 ```{r setup}
-devtools::install_github("leuneri/dsci-310-group-18-pkg")
 library(group18package)
 ```
 
@@ -47,7 +46,11 @@ In this example we are using
 the factor variable is `diagnosis_f`, the numeric variable is `age`.
 
 ``` {r grid_boxplot}
-boxplot <- grid_boxplot(training_split_new, age, "Age (Years)", "Severity of heart disease \n compared to age of patient")
+age <- 0:10
+max_heart_rate <- 0:10
+diagnosis_f <- factor(c(1,2,3,4,0,1,2,3,4,0,1))
+heart_data <- data.frame(max_heart_rate, age, diagnosis_f)
+boxplot <- grid_boxplot(heart_data, diagnosis_f, age, "Age (Years)", "Severity of heart disease \n compared to age of patient")
 boxplot
 ```
 
