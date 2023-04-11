@@ -33,7 +33,7 @@ from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("leuneri/dsci-310-group-18-pkg")
+devtools::install_github("DSCI-310/dsci-310-group-18-pkg")
 ```
 
 # Package Functions:
