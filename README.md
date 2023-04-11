@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-\![codecov](https://github.com/leuneri/dsci-310-group-18-pkg/actions/workflows/test-coverage.yaml/badge.svg)
+![](https://github.com/leuneri/dsci-310-group-18-pkg/actions/workflows/test-coverage.yaml/badge.svg)
 <!-- badges: end -->
 
 The goal of dsci310.visualizations.pkg is to generate images for a $kNN$
