@@ -4,12 +4,14 @@
 \alias{grid_boxplot}
 \title{Make a grid boxplot}
 \usage{
-grid_boxplot(data, yAxis, yLabel, titleLabel)
+grid_boxplot(data, xAxis, yAxis, yLabel, titleLabel)
 }
 \arguments{
 \item{data}{The dataset we're using.}
 
-\item{yAxis}{The Y Axis parameter.}
+\item{xAxis}{The X axis parameter, must be factor type}
+
+\item{yAxis}{The Y Axis parameter, must be numeric type}
 
 \item{yLabel}{The label for the Y Axis.}
 
@@ -22,6 +24,6 @@ A visualization of a boxplot.
 Make a grid boxplot
 }
 \examples{
-grid_boxplot(mtcars, age, "Age (years)",
+grid_boxplot(mtcars, diagnosis_f, age, "Age (years)",
 "A. Boxplot of degree of heart \n disease in relation to patient's \nage")
 }
