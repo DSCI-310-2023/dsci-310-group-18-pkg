@@ -18,7 +18,7 @@ library(tidyverse)
 # reading in data
 ```
 
-# dsci310.visualizations.pkg
+# group18package
 
 <!-- badges: start -->
 [![codecov](https://github.com/leuneri/dsci-310-group-18-pkg/actions/workflows/test-coverage.yaml/badge.svg)

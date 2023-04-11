@@ -1,8 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# dsci310.visualizations.pkg
-
+# group18package
 
 <!-- badges: start -->
 
@@ -51,9 +50,7 @@ devtools::install_github("leuneri/dsci-310-group-18-pkg")
 In order to use any of the functions the library must be called:
 
 ``` r
-
 library(group18package)
-
 ```
 
 ### grid_boxplot()
@@ -70,10 +67,6 @@ the factor variable is `diagnosis_f`, the numeric variable is `age`.
 ``` r
 boxplot <- grid_boxplot(data = training_split_new, xAxis = as.factor(training_split_new$diagnosis_f), yAxis = age, yLabel = "Age (Years)", titleLabel = "Severity of heart disease \n compared to age of patient")
 boxplot
-#> function (x, ...) 
-#> UseMethod("boxplot")
-#> <bytecode: 0x7f7c8f1f6918>
-#> <environment: namespace:graphics>
 ```
 
 <img src="man/figures/README-grid_boxplot-1.png" width="100%" />
