@@ -31,7 +31,6 @@ This is the documentation of how to use the dsci18pkg package for useful functio
 In order to use any of the functions the library must be called:
 
 ```{r setup}
-devtools::install_github("leuneri/dsci-310-group-18-pkg")
 library(group18package)
 ```
 
