@@ -3,6 +3,12 @@
 
 # dsci310.visualizations.pkg
 
+
+<!-- badges: start -->
+
+\[![codecov](https://github.com/leuneri/dsci-310-group-18-pkg/actions/workflows/test-coverage.yaml/badge.svg)
+<!-- badges: end -->
+
 The goal of dsci310.visualizations.pkg is to generate images for a $kNN$
 classification model that predicts patient heart disease severity using
 open source patient data from [Cleveland,Switzerland, VA Long Beach, &
@@ -45,7 +51,9 @@ devtools::install_github("leuneri/dsci-310-group-18-pkg")
 In order to use any of the functions the library must be called:
 
 ``` r
+
 library(group18package)
+
 ```
 
 ### grid_boxplot()
@@ -62,6 +70,10 @@ the factor variable is `diagnosis_f`, the numeric variable is `age`.
 ``` r
 boxplot <- grid_boxplot(data = training_split_new, xAxis = as.factor(training_split_new$diagnosis_f), yAxis = age, yLabel = "Age (Years)", titleLabel = "Severity of heart disease \n compared to age of patient")
 boxplot
+#> function (x, ...) 
+#> UseMethod("boxplot")
+#> <bytecode: 0x7f7c8f1f6918>
+#> <environment: namespace:graphics>
 ```
 
 <img src="man/figures/README-grid_boxplot-1.png" width="100%" />
