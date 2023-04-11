@@ -1,0 +1,116 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# dsci310.visualizations.pkg
+
+The goal of dsci310.visualizations.pkg is to generate images for a $kNN$
+classification model that predicts patient heart disease severity using
+open source patient data from [Cleveland,Switzerland, VA Long Beach, &
+Hungary](https://archive.ics.uci.edu/ml/datasets/Heart+Disease). It
+provides convenience functions that generate nicely formatted
+visualizations with this classification model in mind.
+
+This package is built to aid in visualization generation from the start
+of a $kNN$ analysis to the end as it. This package makes generating EDA
+visualizations, model building visualizations, and result visualizations
+easy!
+
+This package is a combination of `cowplot` & `ggplot2`. It also uses
+functions from the `tidymodels`& `tidyverse` packages.
+`dsci310.visualization.pkg` is made to be a convenient combination of
+all the above packages that has pre-formatted visualizations for a heart
+disease severity classification.
+
+## Installation
+
+You can install the development version of dsci310.visualizations.pkg
+from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Dokkaebi10/dsci-310-group-18-pkg")
+```
+
+# Package Functions:
+
+- [`grid_boxplot()`](#grid_boxplot())
+- [`majority_classifier_vis_function()`](#majority_classifier_vis_function())
+- [`knn_visualization()`](#knn_visualizations)
+
+## Usage:
+
+\*All examples were generated using this
+[data](https://raw.githubusercontent.com/Dokkaebi10/dsci-310-group-18/main/data/processed/heart_data.csv).
+
+In order to use any of the functions the library must be called:
+
+``` r
+library(dsci310.visualizations.pkg)
+```
+
+### grid_boxplot()
+
+The function `grid_boxplot()` takes in a R data frame with factor
+`diagnosis_f` & a specified numeric type variable. `grid_boxplot()` then
+produces a boxplot that shows the range of the numeric variable each
+level of heart severity lies in.
+
+In this example we are using
+[heart_data](https://raw.githubusercontent.com/Dokkaebi10/dsci-310-group-18/main/data/processed/heart_data.csv),
+the factor variable is `diagnosis_f`, the numeric variable is `age`.
+
+``` r
+#boxplot <- grid_boxplot(data = training_split_new, xAxis = diagnosis_f, yAxis = age, yLabel = "Age (Years)", titleLabel = "Severity of heart disease \n compared to age of patient")
+boxplot
+#> function (x, ...) 
+#> UseMethod("boxplot")
+#> <bytecode: 0x7f888c18b518>
+#> <environment: namespace:graphics>
+```
+
+Notice how `grid_boxplot` displays differences of the factor variable
+over the numeric variable. This type of visualization can be very
+helpful for early data visualization and question development!
+
+### majority_classifier_vis_function()
+
+`majority_classifier_vis_function()` produces a graph that displays the
+percent of rows belonging to each category in a factor variable of
+interest.
+
+This function produces a bar plot that has the degree of heart disease
+severity on the x-axis and the percent of rows in the data on the
+y-axis.
+
+This function is a convenient shortcut when determining if there is a
+categorical imbalance in the data you are using to build your model.
+
+``` r
+# maj_vis <- majority_classifier_vis_function(data = majority_classifier, 
+                                 # hGraph = 5, 
+                                 # wGraph = 7, 
+                                 # textSize = 12, 
+                                 # colWidth = 0.5, 
+                                 # xLabel = "Heart disease degree of severity", 
+                                 # yLabel = "Percent of outcomes \n in training dataset", 
+                                 # titleLabel = "Label proportions of \n classifier in dataset")
+# maj_vis
+```
+
+### knn_visualization()
+
+`knn_visualization()` produces a visualization of the number of
+neighbors against accuracy estimate. This type of visualization is very
+useful when trying to determine the number of neighbors to use in a kNN
+model.
+
+`knn_visualization` generates a visualization that provides more context
+to the accuracy values than simply looking at the numbers. It ensures
+the choice for the number of neighbors is informed in a simple and
+easily executable way.
+
+The function `knn_visualization()`
+
+``` r
+# knn_visualization(data = heart_data_accuracies)
+```
