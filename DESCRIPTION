@@ -17,5 +17,8 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0),
     ggplot2,
-    covr
+    covr,
+    knitr,
+    rmarkdown
 Config/testthat/edition: 3
+VignetteBuilder: knitr
