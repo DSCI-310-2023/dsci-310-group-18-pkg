@@ -24,10 +24,10 @@ source('R/heart_data_accuracies.R')
 ```
 
 # dsci310.visualizations.pkg
+
 <!-- badges: start -->
 [![codecov](https://github.com/leuneri/dsci-310-group-18-pkg/actions/workflows/test-coverage.yaml/badge.svg)
 <!-- badges: end -->
-
 
 The goal of dsci310.visualizations.pkg is to generate images for a $kNN$ classification model that predicts patient heart disease severity using open source patient data from [Cleveland,Switzerland, VA Long Beach, & Hungary](https://archive.ics.uci.edu/ml/datasets/Heart+Disease). It provides convenience functions that generate nicely formatted visualizations with this classification model in mind. 
 

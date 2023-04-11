@@ -69,7 +69,7 @@ the factor variable is `diagnosis_f`, the numeric variable is `age`.
 boxplot
 #> function (x, ...) 
 #> UseMethod("boxplot")
-#> <bytecode: 0x7fd771124718>
+#> <bytecode: 0x7f7c8f1f6918>
 #> <environment: namespace:graphics>
 ```
 
