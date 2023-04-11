@@ -16,11 +16,6 @@ knitr::opts_chunk$set(
 ```{r data, include = FALSE}
 library(tidyverse)
 # reading in data
-source('R/training_split_new.R')
-source('R/majority_classifier.R')
-majority_classifier <- mutate(majority_classifier, 
-                              diagnosis_f = as.factor(diagnosis_f))
-source('R/heart_data_accuracies.R')
 ```
 
 # dsci310.visualizations.pkg
@@ -37,7 +32,7 @@ You can install the development version of dsci310.visualizations.pkg from [GitH
 
 ```{r loading, results = 'hide', message = FALSE}
 # install.packages("devtools")
-devtools::install_github("Dokkaebi10/dsci-310-group-18-pkg")
+devtools::install_github("leuneri/dsci-310-group-18-pkg")
 ```
 
 # Package Functions:
@@ -52,7 +47,7 @@ devtools::install_github("Dokkaebi10/dsci-310-group-18-pkg")
 
 In order to use any of the functions the library must be called:
 ```{r library, message = FALSE, results = 'hide'}
-library(dsci310.visualizations.pkg)
+library(group18package)
 ```
 
 ### grid_boxplot()
@@ -62,7 +57,7 @@ The function `grid_boxplot()` takes in a R data frame with factor `diagnosis_f` 
 In this example we are using [heart_data](https://raw.githubusercontent.com/Dokkaebi10/dsci-310-group-18/main/data/processed/heart_data.csv), the factor variable is `diagnosis_f`, the numeric variable is `age`.
 
 ```{r grid_boxplot}
-#boxplot <- grid_boxplot(data = training_split_new, xAxis = diagnosis_f, yAxis = age, yLabel = "Age (Years)", titleLabel = "Severity of heart disease \n compared to age of patient")
+boxplot <- grid_boxplot(data = training_split_new, xAxis = as.factor(training_split_new$diagnosis_f), yAxis = age, yLabel = "Age (Years)", titleLabel = "Severity of heart disease \n compared to age of patient")
 boxplot
 ```
 
@@ -77,15 +72,15 @@ This function produces a bar plot that has the degree of heart disease severity 
 This function is a convenient shortcut when determining if there is a categorical imbalance in the data you are using to build your model. 
 
 ```{r majority_classifier_vis_function}
-# maj_vis <- majority_classifier_vis_function(data = majority_classifier, 
-                                 # hGraph = 5, 
-                                 # wGraph = 7, 
-                                 # textSize = 12, 
-                                 # colWidth = 0.5, 
-                                 # xLabel = "Heart disease degree of severity", 
-                                 # yLabel = "Percent of outcomes \n in training dataset", 
-                                 # titleLabel = "Label proportions of \n classifier in dataset")
-# maj_vis
+maj_vis <- majority_classifier_vis_function(data = majority_classifier, 
+                                 hGraph = 5, 
+                                 wGraph = 7, 
+                                 textSize = 12, 
+                                 colWidth = 0.5, 
+                                 xLabel = "Heart disease degree of severity", 
+                                 yLabel = "Percent of outcomes \n in training dataset", 
+                                 titleLabel = "Label proportions of \n classifier in dataset")
+maj_vis
 ```
 
 ### knn_visualization()
@@ -96,5 +91,5 @@ This function is a convenient shortcut when determining if there is a categorica
 
 The function `knn_visualization()`
 ```{r knn_visualization}
-# knn_visualization(data = heart_data_accuracies)
+knn_visualization(data = heart_data_accuracies)
 ```
