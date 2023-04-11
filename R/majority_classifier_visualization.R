@@ -23,7 +23,7 @@ majority_classifier_vis_function <- function(data,
                                              yLabel = 'Percent of outcomes \n in training dataset',
                                              titleLabel = 'Label proportions of classifier in dataset'){
   options(repr.plot.height = hGraph, repr.plot_width = wGraph)
-  total_rows <- nrow(readr::read_csv(here::here('dsci-310-group-18-pkg/data/training_split_new.csv')))
+  total_rows <- nrow(training_split_new)
   majority_classifier_vis <- data |>
     dplyr::mutate(percent_outcomes=percent_outcomes/100) |>
     ggplot2::ggplot(ggplot2::aes(x = stats::reorder(diagnosis_f,-percent_outcomes), y=percent_outcomes)) +
