@@ -45,7 +45,7 @@ devtools::install_github("DSCI-310/dsci-310-group-18-pkg")
 ## Usage:
 
 \*All examples were generated using this
-[data](https://raw.githubusercontent.com/Dokkaebi10/dsci-310-group-18/main/data/processed/heart_data.csv).
+[data](https://raw.githubusercontent.com/DSCI-310/dsci-310-group-18/main/data/processed/heart_data.csv).
 
 In order to use any of the functions the library must be called:
 
@@ -61,7 +61,7 @@ produces a boxplot that shows the range of the numeric variable each
 level of heart severity lies in.
 
 In this example we are using
-[heart_data](https://raw.githubusercontent.com/Dokkaebi10/dsci-310-group-18/main/data/processed/heart_data.csv),
+[heart_data](https://raw.githubusercontent.com/DSCI-310/dsci-310-group-18/main/data/processed/heart_data.csv),
 the factor variable is `diagnosis_f`, the numeric variable is `age`.
 
 ``` r
