@@ -3,6 +3,7 @@ Title: Contains functions to use for our particular analysis
 Version: 0.0.0.9000
 Authors@R: 
     person("Eric", "Leung", , "ericleung147258369@hotmail.com", role = c("aut", "cre"))
+    person("Sam", "Thorne", , "samnthorne0@gmail.com", role = c("aut", "cre"))
 Description: Builds what we need for our analysis project.
 License: MIT + file LICENSE
 Encoding: UTF-8
