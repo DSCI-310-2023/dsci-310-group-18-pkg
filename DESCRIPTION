@@ -16,5 +16,5 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0),
     ggplot2,
-    cov
+    covr
 Config/testthat/edition: 3
